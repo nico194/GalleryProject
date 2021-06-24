@@ -4,7 +4,6 @@ const apiKey = "23567b218376f79d9415"
 
 const getToken = () => {
     const token = localStorage.getItem("token");
-    console.log("---->",atob(token))
     return token ? atob(token) : null;
 }
 
@@ -26,7 +25,6 @@ export default {
     },
     getImages(page = 0) {
         const headers = getHeaders();
-        console.log(headers, page, `${API}/images/${ page !== 0 ? page : ""}`)
         return axios.get(`${API}/images${ page !== 0 ? `/?page=${page}` : ""}`, headers);
     },
     getImage(id) {
