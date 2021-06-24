@@ -27,7 +27,7 @@ export default {
     getImages(page = 0) {
         const headers = getHeaders();
         console.log(headers, page, `${API}/images/${ page !== 0 ? page : ""}`)
-        return axios.get(`${API}/images/${ page !== 0 ? `page=${page}` : ""}`, headers);
+        return axios.get(`${API}/images${ page !== 0 ? `/?page=${page}` : ""}`, headers);
     },
     getImage(id) {
         const headers = getHeaders();
